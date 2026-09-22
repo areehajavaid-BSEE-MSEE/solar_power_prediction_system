@@ -61,5 +61,11 @@ linear_model.fit(X_train, y_train)
 linear_pred = linear_model.predict(X_test)
 
 linear_r2 = r2_score(y_test, linear_pred)
+linear_mae = mean_absolute_error(y_test, linear_pred)
+linear_mse = mean_squared_error(y_test, linear_pred)
+linear_rmse = linear_mse ** 0.5
+print("Linear Regression MAE:", linear_mae)
+print("Linear Regression MSE:", linear_mse)
+print("Linear Regression RMSE:", linear_rmse)
 
 print("\nLinear Regression R² Score:", linear_r2)
