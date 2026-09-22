@@ -67,5 +67,24 @@ linear_rmse = linear_mse ** 0.5
 print("Linear Regression MAE:", linear_mae)
 print("Linear Regression MSE:", linear_mse)
 print("Linear Regression RMSE:", linear_rmse)
-
 print("\nLinear Regression R² Score:", linear_r2)
+
+# Random Forest feature importance
+
+feature_importance = pd.DataFrame({
+    "Feature": X.columns,
+    "Importance": model.feature_importances_
+})
+
+feature_importance = feature_importance.sort_values(
+    by="Importance",
+    ascending=False
+)
+
+print("\nRandom Forest Feature Importance:")
+print(feature_importance)
+
+feature_importance.to_csv(
+    "data/feature_importance.csv",
+    index=False
+)
