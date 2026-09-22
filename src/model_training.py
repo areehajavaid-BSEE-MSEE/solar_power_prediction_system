@@ -88,3 +88,16 @@ feature_importance.to_csv(
     "data/feature_importance.csv",
     index=False
 )
+import matplotlib.pyplot as plt
+
+# Plot feature importance
+plt.figure(figsize=(8, 5))
+plt.barh(feature_importance["Feature"], feature_importance["Importance"])
+plt.xlabel("Importance")
+plt.ylabel("Feature")
+plt.title("Random Forest Feature Importance")
+plt.gca().invert_yaxis()
+plt.grid(axis="x")
+
+plt.savefig("data/feature_importance.png")
+plt.show()
