@@ -27,3 +27,7 @@ plt.title("Solar Irradiance vs Power Output")
 plt.grid(True)
 plt.show()
 plt.savefig("data/solar_irradiance_vs_power.png")
+# Correlation analysis
+
+print("\nCorrelation with Power Output:")
+print(df.corr(numeric_only=True)["power_output"].sort_values(ascending=False))
