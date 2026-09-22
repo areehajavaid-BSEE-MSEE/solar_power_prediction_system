@@ -46,6 +46,20 @@ The comparison shows that both models achieved strong performance on the synthet
 
 > Note: These results are based on a synthetically generated dataset and should not be interpreted as real-world solar forecasting performance.
 > Note: The current dataset is synthetically generated for project development and testing. Therefore, the reported performance does not represent performance on real-world solar power data.
+## Feature Importance
+
+Random Forest feature importance was analyzed to understand the contribution of each input feature to the prediction model.
+
+The analysis considers:
+
+- Solar irradiance
+- Temperature
+- Humidity
+- Wind speed
+
+![Random Forest Feature Importance](data/feature_importance.png)
+
+> Note: Feature importance reflects the behavior of the Random Forest model trained on the synthetic dataset. It should not be interpreted as a causal relationship.
 
 ## Project Structure
 
