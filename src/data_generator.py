@@ -9,10 +9,22 @@ data = {
     "temperature": np.random.uniform(15, 45, 100),
     "humidity": np.random.uniform(20, 90, 100),
     "wind_speed": np.random.uniform(0, 15, 100),
-    "power_output": np.random.uniform(0, 500, 100)
+    "power_output": np.clip(
+    0.45 * np.random.uniform(0, 1000, 100)
+    - 2 * np.random.uniform(15, 45, 100)
+    + np.random.normal(0, 30, 100),
+    0,
+    500
+)
 }
-
 df = pd.DataFrame(data)
+df["power_output"] = np.clip(
+    0.45 * df["solar_irradiance"]
+    - 2 * df["temperature"]
+    + np.random.normal(0, 30, len(df)),
+    0,
+    500
+)
 
 df.to_csv("data/solar_data.csv", index=False)
 

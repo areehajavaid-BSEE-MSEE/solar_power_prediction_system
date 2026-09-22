@@ -1,0 +1,2 @@
+solar_irradiance,temperature,humidity,wind_speed,predicted_power_output
+800,30,50,5,326.87906233962303
