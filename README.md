@@ -31,7 +31,20 @@ The model is evaluated using:
 * R² Score
 
 The current model achieved an R² score of approximately **0.92** on the test dataset.
+## Model Comparison
 
+Two regression models were evaluated for solar power prediction:
+
+| Model | MAE | RMSE | R² Score |
+|---|---:|---:|---:|
+| Random Forest | 27.26 | 35.27 | 0.920 |
+| Linear Regression | 21.12 | 28.67 | 0.947 |
+
+The comparison shows that both models achieved strong performance on the synthetic dataset, with Linear Regression obtaining a higher R² score for this particular dataset.
+
+![Model Performance Comparison](data/model_performance_comparison.png)
+
+> Note: These results are based on a synthetically generated dataset and should not be interpreted as real-world solar forecasting performance.
 > Note: The current dataset is synthetically generated for project development and testing. Therefore, the reported performance does not represent performance on real-world solar power data.
 
 ## Project Structure
