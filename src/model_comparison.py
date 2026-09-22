@@ -1,15 +1,19 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
-results = pd.DataFrame({
-    "Model": ["Random Forest", "Linear Regression"],
-    "MAE": [27.260555467029935, 21.119329835647967],
-    "MSE": [1244.2000302298707, 821.7077014686558],
-    "RMSE": [35.27321973154521, 28.665444379403155],
-    "R2": [0.9195019658450818, 0.9468366395988895]
-})
+# Load model comparison results
+results = pd.read_csv("data/model_comparison.csv")
 
-print(results)
+# Plot R² comparison
+plt.figure(figsize=(8, 5))
+plt.bar(results["Model"], results["R2"])
+plt.ylabel("R² Score")
+plt.xlabel("Model")
+plt.title("Model Performance Comparison")
+plt.ylim(0, 1)
+plt.grid(axis="y")
 
-results.to_csv("data/model_comparison.csv", index=False)
+# Save figure
+plt.savefig("data/model_performance_comparison.png")
 
-print("\nModel comparison saved successfully!")
+plt.show()
