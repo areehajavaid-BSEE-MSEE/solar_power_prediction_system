@@ -50,3 +50,16 @@ import joblib
 
 joblib.dump(model, "src/solar_power_model.pkl")
 print("\nModel saved successfully!")
+
+from sklearn.linear_model import LinearRegression
+
+# Linear Regression model
+linear_model = LinearRegression()
+
+linear_model.fit(X_train, y_train)
+
+linear_pred = linear_model.predict(X_test)
+
+linear_r2 = r2_score(y_test, linear_pred)
+
+print("\nLinear Regression R² Score:", linear_r2)
